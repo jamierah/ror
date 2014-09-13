@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
-  get 'static_pages/help'
-  get 'static_pages/about'
-
+  resources :peaks
   resources :microposts
   resources :users
-  root 'users#index'
+
+  root 'static_pages#home'
+  get 'help' => 'static_pages#help'
+  get 'about' => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  get 'peaks/index'
+  get 'signup' => 'users#new'
+
+
+
+  #help_path -> '/help'
+  #help_url  -> 'http://www.rails-tutorial-c9-jamierah.c9.io/help'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

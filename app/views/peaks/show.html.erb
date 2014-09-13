@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @peak.name %>
+</p>
+
+<p>
+  <strong>Altitude:</strong>
+  <%= @peak.altitude %>
+</p>
+
+<p>
+  <strong>Park:</strong>
+  <%= @peak.park %>
+</p>
+
+<%= link_to 'Edit', edit_peak_path(@peak) %> |
+<%= link_to 'Back', peaks_path %>

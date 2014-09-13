@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  altitude: 1
+  park: MyString
+
+two:
+  name: MyString
+  altitude: 1
+  park: MyString

@@ -1,0 +1,29 @@
+<%= form_for(@peak) do |f| %>
+  <% if @peak.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@peak.errors.count, "error") %> prohibited this peak from being saved:</h2>
+
+      <ul>
+      <% @peak.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :altitude %><br>
+    <%= f.number_field :altitude %>
+  </div>
+  <div class="field">
+    <%= f.label :park %><br>
+    <%= f.text_field :park %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
