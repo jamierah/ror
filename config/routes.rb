@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :peaks
   resources :microposts
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
@@ -9,6 +12,8 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'peaks/index'
   get 'signup' => 'users#new'
+  get    'login'    => 'sessions#new'
+  delete 'logout'   => 'sessions#destroy'
 
 
 
