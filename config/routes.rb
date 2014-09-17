@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  resources :peaks
-  resources :microposts
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-
+  # get 'sessions/new'
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
   get 'about' => 'static_pages#about'
@@ -15,6 +9,10 @@ Rails.application.routes.draw do
   get    'login'    => 'sessions#new'
   delete 'logout'   => 'sessions#destroy'
 
+  resources :peaks
+  resources :microposts
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
 
   #help_path -> '/help'
