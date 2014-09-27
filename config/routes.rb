@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
+  get 'account_activations/edit'
+
   # get 'sessions/new'
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
@@ -13,10 +19,9 @@ Rails.application.routes.draw do
   resources :microposts
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
-
-  #help_path -> '/help'
-  #help_url  -> 'http://www.rails-tutorial-c9-jamierah.c9.io/help'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
